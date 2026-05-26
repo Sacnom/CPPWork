@@ -3,14 +3,14 @@
 // Book.cpp
 // 数据模型基础实现：仅实现 Book 类的构造函数与 Getter/Setter。
 
-Book::Book(std::string_view loginId,
+Book::Book(std::string_view bookId,
            std::string_view title,
            std::string_view author,
            std::string_view categoryId,
            std::string_view publisher,
            std::string_view publishTime,
            double price)
-    : loginId_(loginId),
+    : bookId_(bookId),
       title_(title),
       author_(author),
       categoryId_(categoryId),
@@ -20,7 +20,7 @@ Book::Book(std::string_view loginId,
 }
 
 std::string_view Book::getLoginId() const {
-    return loginId_;
+    return bookId_;
 }
 
 std::string_view Book::getTitle() const {
@@ -47,8 +47,8 @@ double Book::getPrice() const {
     return price_;
 }
 
-void Book::setLoginId(std::string_view loginId) {
-    loginId_ = loginId;
+void Book::setLoginId(std::string_view bookId) {
+    bookId_ = bookId;
 }
 
 void Book::setTitle(std::string_view title) {

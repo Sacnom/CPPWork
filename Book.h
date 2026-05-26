@@ -8,7 +8,7 @@
 // 数据模型声明：全组共享的图书实体契约。
 class Book {
 public:
-    Book(std::string_view loginId,
+    Book(std::string_view bookId,
          std::string_view title,
          std::string_view author,
          std::string_view categoryId,
@@ -24,7 +24,7 @@ public:
     std::string_view getPublishTime() const;
     double getPrice() const;
 
-    void setLoginId(std::string_view loginId);
+    void setLoginId(std::string_view bookId);
     void setTitle(std::string_view title);
     void setAuthor(std::string_view author);
     void setCategoryId(std::string_view categoryId);
@@ -33,7 +33,7 @@ public:
     void setPrice(double price);
 
 private:
-    std::string loginId_;
+    std::string bookId_;
     std::string title_;
     std::string author_;
     std::string categoryId_;
