@@ -23,8 +23,8 @@ public:
     void searchByAuthor(std::string_view author) const;
 
     // Module D: 修改与删除（同学D负责）
-    void deleteBook(std::string_view loginId);
-    void modifyBook(std::string_view loginId);
+    void deleteBook(std::string_view bookId);
+    void modifyBook(std::string_view bookId);
 
     // Module E: 排序控制（同学E负责）
     void sortBooks();
