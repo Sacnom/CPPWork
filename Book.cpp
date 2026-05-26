@@ -19,7 +19,11 @@ Book::Book(std::string_view bookId,
       price_(price) {
 }
 
+<<<<<<< HEAD
 std::string_view Book::getLoginId() const {
+=======
+std::string_view Book::getBookId() const {
+>>>>>>> c2a2bb8c23bf984cb8a267f6f182762894a9b339
     return bookId_;
 }
 
@@ -47,7 +51,11 @@ double Book::getPrice() const {
     return price_;
 }
 
+<<<<<<< HEAD
 void Book::setLoginId(std::string_view bookId) {
+=======
+void Book::setBookId(std::string_view bookId) {
+>>>>>>> c2a2bb8c23bf984cb8a267f6f182762894a9b339
     bookId_ = bookId;
 }
 
@@ -74,3 +82,4 @@ void Book::setPublishTime(std::string_view publishTime) {
 void Book::setPrice(double price) {
     price_ = price;
 }
+
