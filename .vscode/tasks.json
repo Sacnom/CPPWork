@@ -9,9 +9,9 @@
                 "-fdiagnostics-color=always",
 				"-std=c++17",
                 "-g",
-                "${workspaceFolder}\\*.cpp",
+                "${workspaceFolder}\\src\\*.cpp",
                 "-o",
-                "${workspaceFolder}\\main.exe"
+                "${workspaceFolder}\\build\\main.exe"
             ],
             "options": {
                 "cwd": "${fileDirname}"

@@ -1,3 +1,4 @@
 BookSystem.exe
 main.exe
 *.exe
+build/
