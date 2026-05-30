@@ -63,7 +63,7 @@ void BookManager::searchByTitle(std::string_view title) const {
     for (const auto& b : books) {
         // 如果这本书的书名里含有关键字
         if (b.getTitle().find(title) != std::string_view::npos) {
-            std::cout << "登录号: " << b.getBookId()
+            std::cout << "登录号: " << b.getLoginId()
                       << "  书名: " << b.getTitle()
                       << "  作者: " << b.getAuthor()
                       << "  价格: " << b.getPrice() << '\n';
@@ -82,7 +82,7 @@ void BookManager::searchByAuthor(std::string_view author) const {
 
     for (const auto& b : books) {
         if (b.getAuthor().find(author) != std::string_view::npos) {
-            std::cout << "登录号: " << b.getBookId()
+            std::cout << "登录号: " << b.getLoginId()
                       << "  书名: " << b.getTitle()
                       << "  作者: " << b.getAuthor()
                       << "  价格: " << b.getPrice() << '\n';

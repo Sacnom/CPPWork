@@ -66,7 +66,7 @@ void BookManager::saveToFile(std::string_view filename) const {
 
     // 遍历 books 里的每一本书，一行一本，字段用 | 隔开
     for (const auto& b : books) {
-        out << b.getBookId()      << '|'
+        out << b.getLoginId()      << '|'
             << b.getTitle()       << '|'
             << b.getAuthor()      << '|'
             << b.getCategoryId()  << '|'

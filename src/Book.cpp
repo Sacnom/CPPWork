@@ -19,7 +19,7 @@ Book::Book(std::string_view bookId,
       price_(price) {
 }
 
-std::string_view Book::getBookId() const {
+std::string_view Book::getLoginId() const {
     return bookId_;
 }
 
@@ -47,7 +47,7 @@ double Book::getPrice() const {
     return price_;
 }
 
-void Book::setBookId(std::string_view bookId) {
+void Book::setLoginId(std::string_view bookId) {
     bookId_ = bookId;
 }
 

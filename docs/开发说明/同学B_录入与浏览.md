@@ -90,7 +90,7 @@ void BookManager::displayAll() const {
 
     // 一本一本打印
     for (const auto& b : books) {
-        std::cout << b.getBookId()      << '\t'
+        std::cout << b.getLoginId()      << '\t'
                   << b.getTitle()       << '\t'
                   << b.getAuthor()      << '\t'
                   << b.getCategoryId()  << '\t'

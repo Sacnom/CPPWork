@@ -25,7 +25,7 @@
 `BookManager` 里有成员变量 `books`，是 `std::vector<Book>`（一个图书数组）。你要做的就是在这个数组里找到指定登录号的那本书，然后删掉或改掉。
 
 **2. 怎么找到那本书？**
-用循环遍历 `books`，每本书都用 `b.getBookId()` 拿它的登录号，和用户给的登录号比较。找到了就停下来操作。
+用循环遍历 `books`，每本书都用 `b.getLoginId()` 拿它的登录号，和用户给的登录号比较。找到了就停下来操作。
 
 **3. 怎么删除 vector 里的一个元素？**
 用 `books.erase(迭代器)`。迭代器可以理解成「指向数组某个位置的指针」。遍历的时候用 `auto it = books.begin(); it != books.end(); ++it`，找到了就 `books.erase(it)`。
@@ -49,7 +49,7 @@
 void BookManager::deleteBook(std::string_view bookId) {
     // 用迭代器遍历，因为 erase 需要迭代器
     for (auto it = books.begin(); it != books.end(); ++it) {
-        if (it->getBookId() == bookId) {   // 找到了
+        if (it->getLoginId() == bookId) {   // 找到了
             books.erase(it);               // 删掉这本书
             std::cout << "已删除登录号为「" << bookId << "」的图书。\n";
             return;  // 删完就结束，不用继续找了
@@ -63,7 +63,7 @@ void BookManager::deleteBook(std::string_view bookId) {
 void BookManager::modifyBook(std::string_view bookId) {
     // 用普通引用遍历，因为要改它
     for (auto& b : books) {
-        if (b.getBookId() == bookId) {   // 找到了
+        if (b.getLoginId() == bookId) {   // 找到了
             std::cout << "找到图书：" << b.getTitle() << "，请输入新的信息。\n";
 
             std::string newTitle, newAuthor, newCategoryId;
@@ -114,13 +114,13 @@ void BookManager::modifyBook(std::string_view bookId) {
 
 ## 五、容易踩的坑
 
-- **`deleteBook` 里用 `it->getBookId()`**：迭代器要用 `->` 访问成员，不是 `.`。
+- **`deleteBook` 里用 `it->getLoginId()`**：迭代器要用 `->` 访问成员，不是 `.`。
   
 - **`modifyBook` 里必须用 `auto&`（引用）**：如果写成 `auto b`（没有 `&`），你改的只是一个副本，原数组里的书不会变。
   
 - **`erase` 之后不能再用那个迭代器**：`erase(it)` 之后 `it` 就失效了，所以紧接着 `return`，不要继续循环。
   
-- **登录号不能改**：注意代码里没有 `setBookId`，因为登录号是唯一标识，改了就找不到了。如果用户真要改登录号，只能删掉重新添加。
+- **登录号不能改**：注意代码里没有 `setLoginId`，因为登录号是唯一标识，改了就找不到了。如果用户真要改登录号，只能删掉重新添加。
   
 - **这两个方法都不是 `const`**：因为要改 `books`（删除或修改），所以头文件里它们后面没有 `const`，你也别加。
 

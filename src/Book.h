@@ -16,7 +16,7 @@ public:
          std::string_view publishTime,
          double price);
 
-    std::string_view getBookId() const;
+    std::string_view getLoginId() const;
     std::string_view getTitle() const;
     std::string_view getAuthor() const;
     std::string_view getCategoryId() const;
@@ -24,7 +24,7 @@ public:
     std::string_view getPublishTime() const;
     double getPrice() const;
 
-    void setBookId(std::string_view bookId);
+    void setLoginId(std::string_view bookId);
     void setTitle(std::string_view title);
     void setAuthor(std::string_view author);
     void setCategoryId(std::string_view categoryId);
